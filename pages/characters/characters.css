@@ -1,0 +1,2309 @@
+@import url("../common.css");
+
+/* --------------- Main Section --------------- */
+.characters-main {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
+    url("../../assets/main-bg/3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.characters-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 175, 55, 0.15),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.main-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 0 20px;
+}
+
+.main-tag {
+  display: inline-block;
+  padding: 10px 22px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(98, 81, 27, 0.5);
+  border-radius: 50px;
+  background: rgba(212, 175, 55, 0.08);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.main-content h1 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(2rem, 8vw, 7rem);
+  line-height: 1;
+  letter-spacing: 6px;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.main-content p {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.main-tag,
+.main-content h1,
+.main-content p {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: mainFade 1s ease forwards;
+}
+
+.main-content h1 {
+  animation-delay: 0.2s;
+}
+
+.main-content p {
+  animation-delay: 0.4s;
+}
+
+@keyframes mainFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------ Characters Stats -------------- */
+.character-stats {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 100px 5%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.stat-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 20px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(212, 175, 55, 0.15);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(149, 122, 35, 0.15);
+}
+
+.stat-card h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.stat-card p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ----------- Main Characters ---------- */
+.characters-section {
+  padding: 100px 5%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-header span {
+  display: inline-block;
+  padding: 10px 22px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 50px;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-header h2 {
+  margin-top: 20px;
+  font-family: "Cinzel", serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: 3px;
+  color: #ffffff;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.character-card {
+  position: relative;
+  background: #111111;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.4s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(118, 99, 37, 0.4);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(212, 175, 55, 0.15);
+}
+
+.character-card img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: 0.6s ease;
+}
+
+.character-card:hover img {
+  transform: scale(1.08);
+}
+
+.character-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.character-info h3 {
+  color: #ffffff;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.character-info p {
+  color: var(--gold);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.character-info::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  margin: 0 auto 18px;
+  background: linear-gradient(to right, var(--gold), var(--gold-light));
+  border-radius: 10px;
+}
+
+/* ---------- Captains Section ---------- */
+.captains-section {
+  padding: 120px 5%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-header span {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 50px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-header h2 {
+  margin-top: 20px;
+  font-family: "Cinzel", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  letter-spacing: 3px;
+  color: #fff;
+}
+
+.section-header p {
+  max-width: 650px;
+  margin: 20px auto 0;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+}
+
+.captains-slider-wrapper {
+  position: relative;
+}
+
+.captains-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.captains-grid {
+  display: flex;
+  gap: 35px;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.captain-card {
+  position: relative;
+  flex: 0 0 calc((100% - 70px) / 3);
+  background: #111;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.4s ease;
+}
+
+.captain-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(104, 90, 45, 0.35);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(212, 175, 55, 0.12);
+}
+
+.captain-card img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+  transition: 0.6s ease;
+}
+
+.captain-card:hover img {
+  transform: scale(1.08);
+}
+
+.captain-info {
+  padding: 25px;
+}
+
+.captain-squad {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.captain-info h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.captain-info p {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+}
+
+.captain-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--gold), var(--gold-light));
+  z-index: 2;
+}
+
+.captain-slider-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  width: 52px;
+  height: 52px;
+  transform: translateY(-50%);
+  border: 1px solid rgba(185, 154, 97, 0.18);
+  border-radius: 50%;
+  background: rgba(12, 12, 12, 0.82);
+  color: var(--gold);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.42);
+}
+
+.captain-prev {
+  left: -26px;
+}
+
+.captain-next {
+  right: -26px;
+}
+
+.captain-slider-btn:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+/* --------------- Black Bulls Section --------------- */
+.black-bulls-section {
+  padding: 120px 8%;
+  position: relative;
+}
+
+.bulls-slider {
+  position: relative;
+  margin-top: 60px;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+}
+
+.bulls-grid {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.bulls-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(131, 109, 37, 0.3);
+  background: rgba(10, 10, 10, 0.85);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  color: var(--gold);
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 20;
+  transition: 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-btn:hover {
+  background: var(--gold);
+  color: #111;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 0 25px rgba(155, 129, 43, 0.4);
+}
+
+.prev-btn {
+  left: -30px;
+}
+
+.next-btn {
+  right: -30px;
+}
+
+.mini-card {
+  min-width: 280px;
+  height: 430px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.5s ease;
+}
+
+.mini-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.mini-card:hover img {
+  transform: scale(1.1);
+}
+
+.mini-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.98) 5%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+}
+
+.mini-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(140, 117, 43, 0.5);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+.mini-card h3 {
+  position: absolute;
+  left: 25px;
+  bottom: 30px;
+  z-index: 5;
+  color: white;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: 0.4s ease;
+}
+
+.mini-card:hover h3 {
+  color: var(--gold);
+}
+
+/* ---------- All Villains Section ---------- */
+.villains-section {
+  padding: 120px 8%;
+  background: #0a0a0a;
+}
+
+.villains-section .section-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 70px;
+}
+
+.villains-section .section-header span {
+  display: inline-block;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.villains-section .section-header h2 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.villains-section .section-header p {
+  color: #b8b8b8;
+  line-height: 1.8;
+}
+
+.villains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+}
+
+.villain-card {
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.villain-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(125, 105, 37, 0.25);
+}
+
+.villain-image {
+  height: 420px;
+  overflow: hidden;
+  position: relative;
+}
+
+.villain-image::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+}
+
+.villain-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.6s;
+}
+
+.villain-card:hover img {
+  transform: scale(1.08);
+}
+
+.villain-content {
+  padding: 25px;
+}
+
+.villain-role {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.villain-content h3 {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.villain-content p {
+  color: #bdbdbd;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.villain-card::before {
+  content: "";
+  position: absolute;
+  border-radius: 20px;
+  padding: 1px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.villain-card:hover::before {
+  opacity: 1;
+}
+
+.villain-card {
+  flex: 0 0 calc((100% - 70px) / 3);
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.4s ease;
+}
+
+.slider-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: var(--gold);
+  color: #000;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.slider-btn {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.slider-btn:hover {
+  background: var(--gold-light);
+}
+
+.prev-btn {
+  left: -30px;
+}
+
+.next-btn {
+  right: -30px;
+}
+
+/* ------------ RelationShip Section ---------- */
+.relationship-banner {
+  position: relative;
+  padding: 140px 8%;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
+    url("../../assets/overviews/3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+  height: max-content;
+}
+
+.relationship-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 175, 55, 0.12),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.relationship-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.banner-tag {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.relationship-content h2 {
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.relationship-content p {
+  color: #c2c2c2;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+/* ---------- Characters cta Section ---------- */
+.characters-cta {
+  position: relative;
+  padding: 120px 8%;
+  text-align: center;
+  background:
+    linear-gradient(rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.92)),
+    url("../../assets/overviews/2.jpg") center/cover no-repeat;
+  overflow: hidden;
+}
+
+.characters-cta::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(212, 175, 55, 0.08);
+  filter: blur(120px);
+  border-radius: 50%;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.characters-cta h2 {
+  position: relative;
+  color: #ffffff;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.characters-cta p {
+  position: relative;
+  max-width: 650px;
+  margin: 0 auto 45px;
+  color: #bdbdbd;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.cta-tag {
+  display: inline-block;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.cta-buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-buttons a {
+  text-decoration: none;
+  padding: 16px 34px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: all 0.35s ease;
+}
+
+.cta-buttons a:first-child {
+  background: var(--gold);
+  color: #111;
+  box-shadow: 0 10px 25px rgba(80, 68, 28, 0.25);
+}
+
+.cta-buttons a:first-child:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(70, 59, 23, 0.4);
+}
+
+.cta-buttons a:last-child {
+  border: 1px solid rgba(81, 69, 30, 0.4);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.03);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.cta-buttons a:last-child:hover {
+  background: var(--gold);
+  color: #111;
+  border-color: var(--gold);
+  transform: translateY(-5px);
+}
+
+/* --------------- Responsive --------------- */
+/* ---------- 1024px Screens ---------- */
+@media (max-width: 1024px) {
+  .characters-main {
+    min-height: 85vh;
+    padding: 0 5%;
+  }
+
+  .main-content {
+    max-width: 750px;
+  }
+
+  .main-tag {
+    padding: 9px 20px;
+    font-size: 0.85rem;
+    margin-bottom: 22px;
+  }
+
+  .main-content h1 {
+    font-size: clamp(4rem, 7vw, 6.5rem);
+    letter-spacing: 5px;
+    margin-bottom: 22px;
+  }
+
+  .main-content p {
+    max-width: 600px;
+    font-size: 1.15rem;
+  }
+
+  .character-stats {
+    padding: 90px 5%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .stat-card {
+    padding: 38px 18px;
+  }
+
+  .stat-card h3 {
+    font-size: 3.7rem;
+  }
+
+  .stat-card p {
+    font-size: 0.95rem;
+  }
+
+  .characters-section {
+    padding: 90px 5%;
+  }
+
+  .section-header {
+    margin-bottom: 60px;
+  }
+
+  .section-header span {
+    padding: 9px 20px;
+    font-size: 0.8rem;
+  }
+
+  .section-header h2 {
+    margin-top: 18px;
+    font-size: clamp(2.3rem, 5.5vw, 4.2rem);
+  }
+
+  .characters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .character-card img {
+    height: 400px;
+  }
+
+  .character-info {
+    padding: 22px;
+  }
+
+  .character-info h3 {
+    font-size: 1.35rem;
+  }
+
+  .character-info p {
+    font-size: 0.92rem;
+  }
+
+  .captains-section {
+    padding: 110px 5%;
+  }
+
+  .captains-grid {
+    gap: 32px;
+  }
+
+  .captain-card {
+    flex: 0 0 calc((100% - 64px) / 3);
+  }
+
+  .captain-card img {
+    height: 430px;
+  }
+
+  .captain-info {
+    padding: 22px;
+  }
+
+  .captain-squad {
+    padding: 7px 15px;
+    font-size: 0.72rem;
+  }
+
+  .captain-info h3 {
+    font-size: 1.45rem;
+  }
+
+  .captain-info p {
+    font-size: 0.95rem;
+  }
+
+  .captain-slider-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .captain-prev {
+    left: -25px;
+  }
+
+  .captain-next {
+    right: -25px;
+  }
+
+  .black-bulls-section {
+    padding: 110px 6%;
+  }
+
+  .bulls-slider {
+    margin-top: 55px;
+  }
+
+  .bulls-grid {
+    gap: 28px;
+  }
+
+  .mini-card {
+    min-width: 270px;
+    height: 420px;
+  }
+
+  .mini-card h3 {
+    font-size: 1.32rem;
+    left: 23px;
+    bottom: 28px;
+  }
+
+  .slider-btn {
+    width: 58px;
+    height: 58px;
+  }
+
+  .prev-btn {
+    left: -29px;
+  }
+
+  .next-btn {
+    right: -29px;
+  }
+
+  .villains-section {
+    padding: 110px 6%;
+  }
+
+  .villains-section .section-header {
+    margin-bottom: 65px;
+  }
+
+  .villains-section .section-header h2 {
+    font-size: 2.8rem;
+  }
+
+  .villains-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .villain-image {
+    height: 410px;
+  }
+
+  .villain-content {
+    padding: 23px;
+  }
+
+  .villain-role {
+    padding: 7px 15px;
+    font-size: 0.78rem;
+  }
+
+  .villain-content h3 {
+    font-size: 1.55rem;
+  }
+
+  .villain-content p {
+    font-size: 0.92rem;
+  }
+
+  .relationship-banner {
+    padding: 130px 6%;
+  }
+
+  .relationship-content h2 {
+    font-size: clamp(2.3rem, 4.5vw, 4.2rem);
+    margin-bottom: 23px;
+  }
+
+  .relationship-content p {
+    font-size: 1.08rem;
+    margin-bottom: 55px;
+  }
+
+  .characters-cta {
+    padding: 110px 6%;
+  }
+
+  .characters-cta h2 {
+    font-size: clamp(2.3rem, 4.5vw, 3.8rem);
+    margin-bottom: 18px;
+  }
+
+  .characters-cta p {
+    margin-bottom: 42px;
+    font-size: 1.02rem;
+  }
+
+  .cta-buttons a {
+    padding: 15px 32px;
+    font-size: 0.92rem;
+  }
+}
+
+/* ---------- 768px Screens ---------- */
+@media (max-width: 768px) {
+  .characters-main {
+    min-height: 80vh;
+    padding: 0 5%;
+  }
+
+  .main-content {
+    max-width: 100%;
+  }
+
+  .main-tag {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+  }
+
+  .main-content h1 {
+    font-size: 4.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+  }
+
+  .main-content p {
+    font-size: 1.08rem;
+    line-height: 1.75;
+  }
+
+  .character-stats {
+    padding: 80px 5%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .stat-card {
+    padding: 35px 16px;
+  }
+
+  .stat-card h3 {
+    font-size: 3.5rem;
+    margin-bottom: 11px;
+  }
+
+  .stat-card p {
+    font-size: 0.92rem;
+  }
+
+  .characters-section {
+    padding: 80px 5%;
+  }
+
+  .section-header {
+    margin-bottom: 55px;
+  }
+
+  .section-header span {
+    padding: 8px 18px;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+  }
+
+  .section-header h2 {
+    margin-top: 16px;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+
+  .characters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .character-card {
+    border-radius: 20px;
+  }
+
+  .character-card img {
+    height: 370px;
+  }
+
+  .character-info {
+    padding: 20px;
+  }
+
+  .character-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 9px;
+  }
+
+  .character-info p {
+    font-size: 0.9rem;
+  }
+
+  .captains-section {
+    padding: 100px 5%;
+  }
+
+  .captains-grid {
+    gap: 30px;
+  }
+
+  .captain-card {
+    flex: 0 0 100%;
+  }
+
+  .captain-card img {
+    height: 420px;
+  }
+
+  .captain-info {
+    padding: 20px;
+  }
+
+  .captain-squad {
+    padding: 7px 14px;
+    font-size: 0.7rem;
+    margin-bottom: 13px;
+  }
+
+  .captain-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 11px;
+  }
+
+  .captain-info p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .captain-slider-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 0.95rem;
+  }
+
+  .captain-prev {
+    left: 5px;
+  }
+
+  .captain-next {
+    right: 5px;
+  }
+
+  .black-bulls-section {
+    padding: 100px 5%;
+  }
+
+  .bulls-slider {
+    margin-top: 50px;
+  }
+
+  .bulls-grid {
+    gap: 25px;
+  }
+
+  .mini-card {
+    min-width: 250px;
+    height: 390px;
+  }
+
+  .mini-card h3 {
+    font-size: 1.28rem;
+    left: 20px;
+    bottom: 25px;
+  }
+
+  .slider-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 1.05rem;
+  }
+
+  .prev-btn {
+    left: 5px;
+  }
+
+  .next-btn {
+    right: 5px;
+  }
+
+  .villains-section {
+    padding: 100px 5%;
+  }
+
+  .villains-section .section-header {
+    margin-bottom: 60px;
+  }
+
+  .villains-section .section-header span {
+    font-size: 0.78rem;
+  }
+
+  .villains-section .section-header h2 {
+    font-size: 2.6rem;
+    margin-bottom: 18px;
+  }
+
+  .villains-section .section-header p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .villains-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .villain-card {
+    border-radius: 18px;
+  }
+
+  .villain-image {
+    height: 400px;
+  }
+
+  .villain-content {
+    padding: 22px;
+  }
+
+  .villain-role {
+    padding: 7px 14px;
+    font-size: 0.76rem;
+    margin-bottom: 13px;
+  }
+
+  .villain-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 11px;
+  }
+
+  .villain-content p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .relationship-banner {
+    padding: 120px 5%;
+    background-attachment: scroll;
+  }
+
+  .banner-tag {
+    font-size: 0.8rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 18px;
+  }
+
+  .relationship-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 22px;
+  }
+
+  .relationship-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 50px;
+  }
+
+  .characters-cta {
+    padding: 100px 5%;
+  }
+
+  .cta-tag {
+    font-size: 0.8rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 13px;
+  }
+
+  .characters-cta h2 {
+    font-size: 2.6rem;
+    margin-bottom: 18px;
+  }
+
+  .characters-cta p {
+    margin-bottom: 40px;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .cta-buttons {
+    gap: 18px;
+  }
+
+  .cta-buttons a {
+    padding: 14px 30px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------- 425px Screens ---------- */
+@media (max-width: 425px) {
+  .characters-main {
+    min-height: 75vh;
+    padding: 0 20px;
+  }
+
+  .main-tag {
+    padding: 7px 16px;
+    font-size: 0.75rem;
+    letter-spacing: 1.2px;
+    margin-bottom: 18px;
+  }
+
+  .main-content h1 {
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+  }
+
+  .main-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .character-stats {
+    padding: 70px 20px;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .stat-card {
+    padding: 32px 15px;
+  }
+
+  .stat-card h3 {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+  }
+
+  .stat-card p {
+    font-size: 0.9rem;
+  }
+
+  .characters-section {
+    padding: 70px 20px;
+  }
+
+  .section-header {
+    margin-bottom: 50px;
+  }
+
+  .section-header span {
+    padding: 7px 16px;
+    font-size: 0.75rem;
+  }
+
+  .section-header h2 {
+    margin-top: 15px;
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+  }
+
+  .characters-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .character-card {
+    border-radius: 18px;
+  }
+
+  .character-card img {
+    height: 450px;
+  }
+
+  .character-info {
+    padding: 18px;
+  }
+
+  .character-info::before {
+    width: 45px;
+    margin-bottom: 16px;
+  }
+
+  .character-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+
+  .character-info p {
+    font-size: 0.88rem;
+  }
+
+  .captains-section {
+    padding: 90px 20px;
+  }
+
+  .captain-card img {
+    height: 380px;
+  }
+
+  .captain-info {
+    padding: 18px;
+  }
+
+  .captain-squad {
+    padding: 6px 13px;
+    font-size: 0.68rem;
+    margin-bottom: 12px;
+  }
+
+  .captain-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .captain-info p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .captain-slider-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 0.9rem;
+  }
+
+  .black-bulls-section {
+    padding: 90px 20px;
+  }
+
+  .bulls-slider {
+    margin-top: 45px;
+  }
+
+  .bulls-grid {
+    gap: 22px;
+  }
+
+  .mini-card {
+    min-width: 230px;
+    height: 360px;
+    border-radius: 20px;
+  }
+
+  .mini-card h3 {
+    font-size: 1.22rem;
+    left: 18px;
+    bottom: 22px;
+  }
+
+  .slider-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+  }
+
+  .villains-section {
+    padding: 90px 20px;
+  }
+
+  .villains-section .section-header {
+    margin-bottom: 55px;
+  }
+
+  .villains-section .section-header h2 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+  }
+
+  .villains-section .section-header p {
+    font-size: 0.92rem;
+  }
+
+  .villains-grid {
+    gap: 28px;
+  }
+
+  .villain-card {
+    border-radius: 16px;
+  }
+
+  .villain-image {
+    height: 360px;
+  }
+
+  .villain-content {
+    padding: 20px;
+  }
+
+  .villain-role {
+    padding: 6px 13px;
+    font-size: 0.74rem;
+    margin-bottom: 12px;
+  }
+
+  .villain-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .villain-content p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .relationship-banner {
+    padding: 110px 20px;
+  }
+
+  .banner-tag {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .relationship-content h2 {
+    font-size: 2.5rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .relationship-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 45px;
+  }
+
+  .characters-cta {
+    padding: 90px 20px;
+  }
+
+  .cta-tag {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .characters-cta h2 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+  }
+
+  .characters-cta p {
+    margin-bottom: 38px;
+    font-size: 0.98rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cta-buttons a {
+    width: 100%;
+    max-width: 320px;
+    padding: 13px 28px;
+    font-size: 0.88rem;
+  }
+}
+
+/* ---------- 375px Screens ---------- */
+@media (max-width: 375px) {
+  .characters-main {
+    min-height: 72vh;
+    padding: 0 18px;
+  }
+
+  .main-tag {
+    padding: 6px 15px;
+    font-size: 0.72rem;
+  }
+
+  .main-content h1 {
+    font-size: 3.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .main-content p {
+    font-size: 0.98rem;
+  }
+
+  .character-stats {
+    padding: 65px 18px;
+    gap: 20px;
+  }
+
+  .stat-card {
+    padding: 30px 14px;
+  }
+
+  .stat-card h3 {
+    font-size: 3rem;
+  }
+
+  .stat-card p {
+    font-size: 0.88rem;
+  }
+
+  .characters-section {
+    padding: 65px 18px;
+  }
+
+  .section-header {
+    margin-bottom: 45px;
+  }
+
+  .section-header span {
+    padding: 6px 15px;
+    font-size: 0.72rem;
+  }
+
+  .section-header h2 {
+    margin-top: 14px;
+    font-size: 2.3rem;
+  }
+
+  .characters-grid {
+    gap: 20px;
+  }
+
+  .character-card img {
+    height: 420px;
+  }
+
+  .character-info {
+    padding: 16px;
+  }
+
+  .character-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .character-info p {
+    font-size: 0.86rem;
+  }
+
+  .captains-section {
+    padding: 85px 18px;
+  }
+
+  .captain-card img {
+    height: 350px;
+  }
+
+  .captain-info {
+    padding: 16px;
+  }
+
+  .captain-squad {
+    padding: 6px 12px;
+    font-size: 0.66rem;
+  }
+
+  .captain-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .captain-info p {
+    font-size: 0.88rem;
+  }
+
+  .captain-slider-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 0.85rem;
+  }
+
+  .black-bulls-section {
+    padding: 85px 18px;
+  }
+
+  .bulls-slider {
+    margin-top: 42px;
+  }
+
+  .bulls-grid {
+    gap: 20px;
+  }
+
+  .mini-card {
+    min-width: 210px;
+    height: 340px;
+  }
+
+  .mini-card h3 {
+    font-size: 1.18rem;
+    left: 16px;
+    bottom: 20px;
+  }
+
+  .slider-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 0.95rem;
+  }
+
+  .villains-section {
+    padding: 85px 18px;
+  }
+
+  .villains-section .section-header {
+    margin-bottom: 50px;
+  }
+
+  .villains-section .section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .villains-section .section-header p {
+    font-size: 0.9rem;
+  }
+
+  .villains-grid {
+    gap: 26px;
+  }
+
+  .villain-image {
+    height: 340px;
+  }
+
+  .villain-content {
+    padding: 18px;
+  }
+
+  .villain-role {
+    padding: 6px 12px;
+    font-size: 0.72rem;
+  }
+
+  .villain-content h3 {
+    font-size: 1.35rem;
+  }
+
+  .villain-content p {
+    font-size: 0.86rem;
+  }
+
+  .relationship-banner {
+    padding: 100px 18px;
+  }
+
+  .banner-tag {
+    font-size: 0.72rem;
+  }
+
+  .relationship-content h2 {
+    font-size: 2.3rem;
+    margin-bottom: 18px;
+  }
+
+  .relationship-content p {
+    font-size: 0.98rem;
+    margin-bottom: 42px;
+  }
+
+  .characters-cta {
+    padding: 85px 18px;
+  }
+
+  .cta-tag {
+    font-size: 0.72rem;
+  }
+
+  .characters-cta h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .characters-cta p {
+    margin-bottom: 36px;
+    font-size: 0.96rem;
+  }
+
+  .cta-buttons a {
+    max-width: 100%;
+    padding: 12px 26px;
+    font-size: 0.86rem;
+  }
+}
+
+/* ---------- 320px Screens ---------- */
+@media (max-width: 320px) {
+  .characters-main {
+    min-height: 70vh;
+    padding: 0 15px;
+  }
+
+  .main-tag {
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+
+  .main-content h1 {
+    font-size: 2.8rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+  }
+
+  .main-content p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .character-stats {
+    padding: 60px 15px;
+    gap: 18px;
+  }
+
+  .stat-card {
+    padding: 28px 13px;
+    border-radius: 18px;
+  }
+
+  .stat-card h3 {
+    font-size: 2.8rem;
+    margin-bottom: 9px;
+  }
+
+  .stat-card p {
+    font-size: 0.86rem;
+  }
+
+  .characters-section {
+    padding: 60px 15px;
+  }
+
+  .section-header {
+    margin-bottom: 42px;
+  }
+
+  .section-header span {
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+
+  .section-header h2 {
+    margin-top: 13px;
+    font-size: 2.1rem;
+    letter-spacing: 1px;
+  }
+
+  .characters-grid {
+    gap: 18px;
+  }
+
+  .character-card {
+    border-radius: 16px;
+  }
+
+  .character-card img {
+    height: 390px;
+  }
+
+  .character-info {
+    padding: 15px;
+  }
+
+  .character-info::before {
+    width: 40px;
+    height: 2.5px;
+    margin-bottom: 14px;
+  }
+
+  .character-info h3 {
+    font-size: 1.15rem;
+    margin-bottom: 7px;
+  }
+
+  .character-info p {
+    font-size: 0.84rem;
+  }
+
+  .captains-section {
+    padding: 80px 15px;
+  }
+
+  .captain-card {
+    border-radius: 20px;
+  }
+
+  .captain-card img {
+    height: 320px;
+  }
+
+  .captain-card::before {
+    height: 3px;
+  }
+
+  .captain-info {
+    padding: 15px;
+  }
+
+  .captain-squad {
+    padding: 5px 11px;
+    font-size: 0.64rem;
+    margin-bottom: 11px;
+  }
+
+  .captain-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 9px;
+  }
+
+  .captain-info p {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  .captain-slider-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.82rem;
+  }
+
+  .black-bulls-section {
+    padding: 80px 15px;
+  }
+
+  .bulls-slider {
+    margin-top: 40px;
+  }
+
+  .bulls-grid {
+    gap: 18px;
+  }
+
+  .mini-card {
+    min-width: 190px;
+    height: 310px;
+    border-radius: 18px;
+  }
+
+  .mini-card h3 {
+    font-size: 1.12rem;
+    left: 15px;
+    bottom: 18px;
+  }
+
+  .slider-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 0.9rem;
+  }
+
+  .villains-section {
+    padding: 80px 15px;
+  }
+
+  .villains-section .section-header {
+    margin-bottom: 45px;
+  }
+
+  .villains-section .section-header span {
+    font-size: 0.7rem;
+  }
+
+  .villains-section .section-header h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .villains-section .section-header p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .villains-grid {
+    gap: 24px;
+  }
+
+  .villain-card {
+    border-radius: 15px;
+  }
+
+  .villain-image {
+    height: 310px;
+  }
+
+  .villain-content {
+    padding: 16px;
+  }
+
+  .villain-role {
+    padding: 5px 11px;
+    font-size: 0.7rem;
+    margin-bottom: 11px;
+  }
+
+  .villain-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 9px;
+  }
+
+  .villain-content p {
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  .relationship-banner {
+    padding: 90px 15px;
+  }
+
+  .banner-tag {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+  }
+
+  .relationship-content h2 {
+    font-size: 2.1rem;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .relationship-content p {
+    font-size: 0.94rem;
+    line-height: 1.65;
+    margin-bottom: 38px;
+  }
+
+  .characters-cta {
+    padding: 80px 15px;
+  }
+
+  .cta-tag {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 11px;
+  }
+
+  .characters-cta::before {
+    width: 450px;
+    height: 450px;
+  }
+
+  .characters-cta h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .characters-cta p {
+    margin-bottom: 34px;
+    font-size: 0.94rem;
+    line-height: 1.7;
+  }
+
+  .cta-buttons {
+    gap: 14px;
+  }
+
+  .cta-buttons a {
+    padding: 11px 24px;
+    font-size: 0.84rem;
+  }
+}
+
+/* ---------- Extra Small Screens (280px) ---------- */
+@media (max-width: 280px) {
+  .logo img {
+    width: 90px;
+    height: 45px;
+  }
+
+  .mobile-toggle {
+    width: 25px;
+    height: 25px;
+    font-size: 1.1rem;
+  }
+
+  .main-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-content p {
+    font-size: 0.88rem;
+  }
+
+  .stat-card h3 {
+    font-size: 2.6rem;
+  }
+
+  .character-card img {
+    height: 360px;
+  }
+
+  .captain-card img {
+    height: 290px;
+  }
+
+  .mini-card {
+    min-width: 170px;
+    height: 280px;
+  }
+
+  .villain-image {
+    height: 280px;
+  }
+
+  .relationship-content h2 {
+    font-size: 1.9rem;
+  }
+
+  .characters-cta h2 {
+    font-size: 1.85rem;
+  }
+}
+
+/* ---------- Landscape Tablet (1024px height) ---------- */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .characters-main {
+    min-height: 70vh;
+  }
+
+  .relationship-banner {
+    padding: 100px 6%;
+  }
+}
+
+/* ---------- Small Landscape Phones ---------- */
+@media (max-width: 768px) and (orientation: landscape) {
+  .characters-main {
+    min-height: 65vh;
+    padding: 0 5%;
+  }
+
+  .main-content h1 {
+    font-size: 3rem;
+  }
+
+  .main-content p {
+    font-size: 0.95rem;
+  }
+
+  .relationship-banner {
+    padding: 80px 5%;
+  }
+}
+
+/* ---------- Touch Device Optimizations ---------- */
+@media (hover: none) and (pointer: coarse) {
+  .character-card:hover {
+    transform: none;
+  }
+
+  .character-card:active {
+    transform: translateY(-8px);
+  }
+
+  .captain-card:hover {
+    transform: none;
+  }
+
+  .captain-card:active {
+    transform: translateY(-8px);
+  }
+
+  .mini-card:hover {
+    transform: none;
+  }
+
+  .mini-card:active {
+    transform: translateY(-8px);
+  }
+
+  .villain-card:hover {
+    transform: none;
+  }
+
+  .villain-card:active {
+    transform: translateY(-6px);
+  }
+
+  .cta-buttons a {
+    padding: 14px 32px;
+  }
+}
+
+/* ---------- Reduce Motion Preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .main-tag,
+  .main-content h1,
+  .main-content p {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .bulls-grid {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- High DPI Displays ---------- */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo img,
+  .character-card img,
+  .captain-card img,
+  .mini-card img,
+  .villain-image img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./home.css" />
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="./home.html" class="logo">
+                <img src="../../assets/logos/logo.png" alt="Black Clover Logo">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                type="button">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Nav Links -->
+            <ul class="nav-links">
+                <li><a href="./home.html" class="active">Home</a></li>
+                <li><a href="../story/story.html">Story</a></li>
+                <li><a href="../characters/characters.html">Characters</a></li>
+                <li><a href="../magic/magic.html">Magic</a></li>
+                <li><a href="../gallery/gallery.html">Gallery</a></li>
+                <!-- Dropdown-->
+                <li class="dropdown">
+                    <a href="#" class="more">
+                        More
+                        <i class="fa-solid fa-angle-down down-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../about/about.html">About</a></li>
+                        <li><a href="../kingdoms/kingdoms.html">Kingdoms</a></li>
+                        <li><a href="../media/media.html">Media</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <section class="main" id="home">
+        <!-- Overlay -->
+        <div class="main-overlay"></div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <p class="main-eyebrow">
+                Clover Kingdom
+            </p>
+            <h1 class="main-title">
+                BLACK CLOVER
+            </h1>
+            <p class="main-subtitle">
+                In a world where magic defines everything,
+                one boy born without mana rises to challenge destiny
+                and pursue the title of Wizard King.
+            </p>
+
+            <!-- Buttons -->
+            <div class="main-buttons">
+                <a href="../story/story.html" class="main-btn primary-btn">
+                    Explore World
+                </a>
+                <a href="../characters/characters.html" class="main-btn secondary-btn">
+                    Meet Characters
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <!-- Background Glow -->
+        <div class="quote-glow"></div>
+
+        <!-- Quote Container -->
+        <div class="quote-container">
+            <p class="quote-label">
+                Legendary Quote
+            </p>
+
+            <h2 class="quote-title">
+                Voices of the Clover Kingdom
+            </h2>
+
+            <div class="quote-card">
+                <i class="fa-solid fa-book-open quote-icon"></i>
+                <p class="quote-text">
+                    "My magic is never giving up!"
+                </p>
+                <div class="quote-author">
+                    <span class="author-line"></span>
+                    <span>Asta</span>
+                </div>
+                <button class="quote-btn">
+                    New Quote
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legends Section -->
+    <section class="characters-section">
+        <div class="section-header">
+            <span class="section-tag">
+                Clover Kingdom
+            </span>
+
+            <h2 class="section-title">
+                Warriors Who Shaped an Era
+            </h2>
+
+            <p class="section-description">
+                From fearless Magic Knights to legendary captains, these individuals
+                forged their own paths and left a lasting mark on the history of the Clover Kingdom.
+            </p>
+
+        </div>
+
+        <div class="slider-wrapper">
+            <button class="slider-btn prev" aria-label="slider">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="character-slider">
+                <div class="character-track">
+                </div>
+            </div>
+
+            <button class="slider-btn next" aria-label="slider">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="../../assets/logos/logo.png" alt="Black Clover Logo">
+                <p class="footer-description">
+                    Explore the world of Magic Knights, Grimoires, Kingdoms,
+                    and the legends who shaped the fate of the Clover Kingdom.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <a href="./home.html">Home</a>
+                    <a href="../about/about.html">About</a>
+                    <a href="../story/story.html">Story</a>
+                    <a href="../characters/characters.html">Characters</a>
+                    <a href="../gallery/gallery.html">Gallery</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <a href="../magic/magic.html">Magic</a>
+                    <a href="../kingdoms/kingdoms.html">Kingdoms</a>
+                    <a href="../media/media.html">Media</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-quote">
+            <span></span>
+            <p>
+                "Surpass your limits. Right here. Right now."
+            </p>
+            <span></span>
+        </div>
+        <div class="footer-bottom">
+            <p>
+                © 2026 Black Clover Fan Website. Crafted with passion.
+            </p>
+        </div>
+    </footer>
+
+    <script src="./home.js"></script>
+    <script src="../common.js"></script>
+</body>
+
+</html>

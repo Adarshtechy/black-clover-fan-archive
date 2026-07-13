@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./characters.css" />
+    <title>Characters</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="../home/home.html" class="logo">
+                <img src="../../assets/logos/logo.png" alt="Black Clover Logo">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                type="button">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Nav Links -->
+            <ul class="nav-links">
+                <li><a href="../home/home.html">Home</a></li>
+                <li><a href="../story/story.html">Story</a></li>
+                <li><a href="./characters.html" class="active">Characters</a></li>
+                <li><a href="../magic/magic.html">Magic</a></li>
+                <li><a href="../gallery/gallery.html">Gallery</a></li>
+                <!-- Dropdown-->
+                <li class="dropdown">
+                    <a href="#" class="more">
+                        More
+                        <i class="fa-solid fa-angle-down down-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../about/about.html">About</a></li>
+                        <li><a href="../kingdoms/kingdoms.html">Kingdoms</a></li>
+                        <li><a href="../media/media.html">Media</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <section class="characters-main">
+        <div class="main-content">
+            <span class="main-tag">Black Clover Database</span>
+            <h1>Characters</h1>
+            <p>
+                Explore heroes, captains, royals,
+                devils and legendary mages.
+            </p>
+        </div>
+    </section>
+
+    <!-- Characters Stats -->
+    <section class="character-stats">
+        <div class="stat-card">
+            <h3>40+</h3>
+            <p>Characters</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>9</h3>
+            <p>Magic Knight Squads</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>50+</h3>
+            <p>Magic Types</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>10+</h3>
+            <p>Major Villains</p>
+        </div>
+    </section>
+
+    <!-- Main Characters -->
+    <section class="characters-section">
+        <div class="section-header">
+            <span>Main Protagonists</span>
+            <h2>The Faces of the Story</h2>
+        </div>
+
+        <div class="characters-grid">
+            <div class="character-card">
+                <img src="../../assets/protagonists/asta.jpg" alt="">
+
+                <div class="character-info">
+                    <h3>Asta</h3>
+                    <p>Anti Magic</p>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <img src="../../assets/protagonists/yuno.jpg" alt="">
+
+                <div class="character-info">
+                    <h3>Yuno</h3>
+                    <p>Wind & Star Magic</p>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <img src="../../assets/protagonists/noelle.jpg" alt="">
+
+                <div class="character-info">
+                    <h3>Noelle Silva</h3>
+                    <p>Water Magic</p>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <img src="../../assets/protagonists/yami.jpg" alt="">
+
+                <div class="character-info">
+                    <h3>Yami Sukehiro</h3>
+                    <p>Dark Magic</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- captains Section -->
+    <section class="captains-section">
+        <div class="section-header">
+            <span>Elite Mages</span>
+            <h2>Magic Knight Captains</h2>
+            <p>
+                The strongest leaders of the Magic Knights who protect
+                the Clover Kingdom from countless threats.
+            </p>
+        </div>
+
+        <div class="captains-slider-wrapper">
+            <button class="captain-slider-btn captain-prev" aria-label="Previous captain" type="button">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="captains-slider">
+                <div class="captains-grid">
+                </div>
+            </div>
+
+            <button class="captain-slider-btn captain-next" aria-label="Next captain" type="button">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Black Bulls Section -->
+    <section class="black-bulls-section">
+        <div class="section-header">
+            <span>Black Bulls Squad</span>
+            <h2>The Most Unpredictable Squad</h2>
+            <p>
+                Known as the worst Magic Knight squad in the Clover Kingdom,
+                the Black Bulls became the kingdom's greatest heroes through
+                determination, friendship, and countless battles.
+            </p>
+        </div>
+
+        <div class="bulls-slider">
+            <button class="slider-btn prev-btn" id="prevBtn" aria-label="button">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="slider-wrapper">
+                <div class="bulls-grid" id="bullsGrid"></div>
+            </div>
+            <button class="slider-btn next-btn" id="nextBtn" aria-label="button">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- All Villains Section -->
+    <section class="villains-section">
+        <div class="section-header">
+            <span>Dark Forces</span>
+            <h2>Major Antagonists</h2>
+
+            <p>
+                The powerful enemies who threatened the Clover Kingdom
+                and pushed its heroes beyond their limits.
+            </p>
+        </div>
+        <div class="villains-grid">
+
+            <!-- Zagred -->
+            <div class="villain-card">
+                <div class="villain-image">
+                    <img src="../../assets/villains/1.jpg" alt="Zagred">
+                </div>
+                <div class="villain-content">
+                    <span class="villain-role">Word Soul Devil</span>
+                    <h3>Zagred</h3>
+                    <p>
+                        The devil responsible for manipulating the Elf Reincarnation
+                        tragedy and bringing chaos to the Clover Kingdom.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Lucifero -->
+            <div class="villain-card">
+                <div class="villain-image">
+                    <img src="../../assets/villains/2.jpg" alt="Lucifero">
+                </div>
+                <div class="villain-content">
+                    <span class="villain-role">King of Devils</span>
+                    <h3>Lucifero</h3>
+                    <p>
+                        The ruler of the underworld possessing overwhelming gravity
+                        magic and immense destructive power.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Lucius -->
+            <div class="villain-card">
+                <div class="villain-image">
+                    <img src="../../assets/villains/3.jpg" alt="Lucius Zogratis">
+                </div>
+                <div class="villain-content">
+                    <span class="villain-role">Final Villain</span>
+                    <h3>Lucius Zogratis</h3>
+                    <p>
+                        The mastermind behind humanity's transformation, wielding
+                        Time Magic and Soul Magic.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Dante -->
+            <div class="villain-card">
+                <div class="villain-image">
+                    <img src="../../assets/villains/4.jpg" alt="Dante Zogratis">
+                </div>
+                <div class="villain-content">
+                    <span class="villain-role">Dark Triad</span>
+                    <h3>Dante Zogratis</h3>
+                    <p>
+                        Host of Lucifero and leader of the Dark Triad, obsessed with
+                        power and destruction.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Vanica -->
+            <div class="villain-card">
+                <div class="villain-image">
+                    <img src="../../assets/villains/5.jpg" alt="Vanica Zogratis">
+                </div>
+                <div class="villain-content">
+                    <span class="villain-role">Dark Triad</span>
+                    <h3>Vanica Zogratis</h3>
+                    <p>
+                        A bloodthirsty warrior who serves as the host of Megicula and
+                        delights in battle.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Zenon -->
+            <div class="villain-card">
+                <div class="villain-image">
+                    <img src="../../assets/villains/6.jpg" alt="Zenon Zogratis">
+                </div>
+                <div class="villain-content">
+                    <span class="villain-role">Dark Triad</span>
+                    <h3>Zenon Zogratis</h3>
+                    <p>
+                        The cold and ruthless strategist of the Dark Triad,
+                        wielding Bone and Spatial Magic.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Megicula -->
+            <div class="villain-card">
+                <div class="villain-image">
+                    <img src="../../assets/villains/7.jpg" alt="Megicula">
+                </div>
+                <div class="villain-content">
+                    <span class="villain-role">Supreme Devil</span>
+                    <h3>Megicula</h3>
+                    <p>
+                        A terrifying devil specializing in Curse-Warding Magic,
+                        responsible for countless tragedies.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Patry -->
+            <div class="villain-card">
+                <div class="villain-image">
+                    <img src="../../assets/villains/8.jpg" alt="Patry">
+                </div>
+                <div class="villain-content">
+                    <span class="villain-role">Eye of the Midnight Sun</span>
+                    <h3>Patry</h3>
+                    <p>
+                        Leader of the Eye of the Midnight Sun whose desire for revenge
+                        nearly destroyed the kingdom.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Relation ship Section -->
+    <section class="relationship-banner">
+        <div class="relationship-overlay"></div>
+        <div class="relationship-content">
+            <span class="banner-tag">
+                Character Dynamics
+            </span>
+
+            <h2>
+                Rivals, Allies & Enemies
+            </h2>
+
+            <p>
+                Friendships, rivalries, and conflicts drive the story forward.
+                Every bond shapes the fate of the Clover Kingdom.
+            </p>
+        </div>
+    </section>
+
+    <!-- Characters cta Section -->
+    <section class="characters-cta">
+        <span class="cta-tag">
+            Continue Your Journey
+        </span>
+        <h2>
+            Continue Exploring
+        </h2>
+        <p>
+            Learn about kingdoms, magic attributes,
+            legendary battles, and the story arcs that
+            shaped the world of Black Clover.
+        </p>
+        <div class="cta-buttons">
+            <a href="../magic/magic.html">
+                Explore Magic System
+            </a>
+            <a href="../story/story.html">
+                View Story Arcs
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="../../assets/logos/logo.png" alt="Black Clover Logo">
+                <p class="footer-description">
+                    Explore the world of Magic Knights, Grimoires, Kingdoms,
+                    and the legends who shaped the fate of the Clover Kingdom.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <a href="../home/home.html">Home</a>
+                    <a href="../about/about.html">About</a>
+                    <a href="../story/story.html">Story</a>
+                    <a href="./characters.html">Characters</a>
+                    <a href="../gallery/gallery.html">Gallery</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <a href="../magic/magic.html">Magic</a>
+                    <a href="../kingdoms/kingdoms.html">Kingdoms</a>
+                    <a href="../media/media.html">Media</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-quote">
+            <span></span>
+            <p>
+                "My Magic is Never Give Up."
+            </p>
+            <span></span>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 Black Clover Fan Website. Crafted with passion.
+            </p>
+        </div>
+    </footer>
+
+    <script src="./characters.js"></script>
+    <script src="../common.js"></script>
+</body>
+
+</html>

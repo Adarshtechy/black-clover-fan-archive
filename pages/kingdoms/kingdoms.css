@@ -1,0 +1,1992 @@
+@import url("../common.css");
+
+/* ------------------ Kingdom Main --------------- */
+.kingdoms-main {
+  position: relative;
+  width: fit-content;
+  min-height: 100vh;
+  padding: 120px 6% 4rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.88)),
+    radial-gradient(circle at center, rgba(141, 13, 34, 0.14), transparent 48%),
+    url("../../assets/main-bg/7.jpg") center/cover no-repeat;
+}
+
+.main-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 175, 55, 0.12),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.main-content {
+  position: relative;
+  z-index: 5;
+  width: min(900px, 90%);
+}
+
+.main-tag {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid rgba(77, 67, 34, 0.5);
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.main-title {
+  font-family: "Cinzel", serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1.05;
+  color: #fff;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(#fff, var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-description {
+  width: min(700px, 100%);
+  margin: auto;
+  font-size: 1.1rem;
+  color: #d9d9d9;
+  line-height: 1.9;
+  margin-bottom: 45px;
+}
+
+.main-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+}
+
+.main-btn {
+  padding: 17px 38px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: 0.35s;
+}
+
+.primary-btn {
+  background: var(--gold);
+  color: #111;
+}
+
+.primary-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(86, 71, 23, 0.5);
+}
+
+.secondary-btn {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.secondary-btn:hover {
+  border-color: var(--gold-light);
+  color: var(--gold);
+}
+
+.main-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.stat-card {
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: 0.35s;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: 0 0 25px rgba(75, 62, 18, 0.25);
+}
+
+.stat-card h3 {
+  color: var(--gold);
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-family: "Cinzel", serif;
+}
+
+.stat-card span {
+  color: #d0d0d0;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #cfcfcf;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+  color: var(--gold);
+}
+
+@keyframes bounce {
+  50% {
+    transform: translate(-50%, 10px);
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold);
+  font-size: 1.4rem;
+  z-index: 2;
+  animation: floatArrow 2s infinite ease-in-out;
+}
+
+@keyframes floatArrow {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+/* ------------- Kingdoms Section ---------- */
+.kingdoms-section {
+  padding: 120px 8%;
+  background: #080808;
+}
+
+.kingdoms-grid {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+}
+
+.kingdom-card {
+  position: relative;
+  background: #111;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.45s;
+}
+
+.kingdom-card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.65),
+    0 0 40px rgba(83, 71, 31, 0.18);
+}
+
+.kingdom-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    transparent,
+    var(--gold-light),
+    transparent
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: 0.45s;
+}
+
+.kingdom-card:hover::before {
+  opacity: 1;
+}
+
+.kingdom-image {
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+}
+
+.kingdom-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.7s;
+}
+
+.kingdom-card:hover img {
+  transform: scale(1.12);
+}
+
+.kingdom-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+}
+
+.kingdom-badge {
+  position: absolute;
+  left: 25px;
+  bottom: 22px;
+  background: rgba(95, 81, 35, 0.15);
+  color: var(--gold);
+  padding: 9px 18px;
+  border-radius: 40px;
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  z-index: 2;
+  border: 1px solid rgba(93, 79, 33, 0.35);
+}
+
+.kingdom-content {
+  padding: 30px;
+}
+
+.kingdom-content h3 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  font-family: "Cinzel", serif;
+}
+
+.kingdom-content p {
+  color: #bfbfbf;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.kingdom-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.kingdom-stats div {
+  background: #161616;
+  padding: 15px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.kingdom-stats span {
+  display: block;
+  color: #888;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.kingdom-stats strong {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.kingdom-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.35s;
+}
+
+.kingdom-btn i {
+  transition: 0.35s;
+}
+
+.kingdom-btn:hover {
+  color: #fff;
+}
+
+.kingdom-btn:hover i {
+  transform: translateX(6px);
+}
+
+.kingdom-card::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -40%;
+  width: 70%;
+  height: 220%;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0)
+  );
+  transform: rotate(25deg);
+  transition: 0.8s;
+}
+
+.kingdom-card:hover::after {
+  left: 150%;
+}
+
+@media (max-width: 768px) {
+  .kingdoms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kingdom-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------- Kingdom Map Section ---------- */
+.kingdom-map-section {
+  padding: 120px 8%;
+  background: #080808;
+  position: relative;
+}
+
+.section-header {
+  line-height: 40px;
+}
+
+.kingdom-map {
+  position: relative;
+  max-width: 1000px;
+  height: 700px;
+  margin: 80px auto;
+  border-radius: 30px;
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 175, 55, 0.08),
+    transparent 70%
+  );
+}
+
+.kingdom-map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px
+  );
+  background-size: 40px 40px;
+  opacity: 0.5;
+}
+
+.map-node {
+  position: absolute;
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.node-icon {
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: 2px solid;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
+}
+
+.node-info {
+  margin-top: 18px;
+}
+
+.node-info h3 {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.node-info p {
+  color: #c5c5c5;
+}
+
+.map-node:hover {
+  transform: translateY(-12px) scale(1.05);
+}
+
+.map-node:hover .node-icon {
+  transform: rotate(8deg) scale(1.15);
+}
+
+.clover {
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.clover .node-icon {
+  border-color: var(--gold-light);
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.08);
+  box-shadow: 0 0 35px rgba(86, 72, 26, 0.35);
+}
+
+.spade {
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.spade .node-icon {
+  border-color: #7b5cff;
+  color: #7b5cff;
+  background: rgba(123, 92, 255, 0.08);
+  box-shadow: 0 0 35px rgba(123, 92, 255, 0.35);
+}
+
+.heart {
+  left: 60px;
+  top: 260px;
+}
+
+.heart .node-icon {
+  border-color: #2ecc71;
+  color: #2ecc71;
+  background: rgba(46, 204, 113, 0.08);
+  box-shadow: 0 0 35px rgba(46, 204, 113, 0.35);
+}
+
+.diamond {
+  right: 60px;
+  top: 260px;
+}
+
+.diamond .node-icon {
+  border-color: #00c8ff;
+  color: #00c8ff;
+  background: rgba(0, 200, 255, 0.08);
+  box-shadow: 0 0 35px rgba(0, 200, 255, 0.35);
+}
+
+.line {
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    rgba(83, 71, 33, 0.3),
+    rgba(255, 255, 255, 0.1)
+  );
+  height: 2px;
+  transform-origin: left center;
+}
+
+.line-1 {
+  width: 170px;
+  left: 50%;
+  top: 130px;
+  transform: rotate(120deg);
+}
+
+.line-2 {
+  width: 170px;
+  left: 50%;
+  top: 130px;
+  transform: rotate(60deg);
+}
+
+.line-3 {
+  width: 170px;
+  left: 280px;
+  top: 380px;
+  transform: rotate(30deg);
+}
+
+.line-4 {
+  width: 170px;
+  right: 280px;
+  top: 380px;
+  transform: rotate(-30deg);
+}
+
+.node-icon::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.kingdom-details-panel {
+  margin-top: 70px;
+  padding: 45px;
+  border-radius: 28px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.kingdom-details-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(212, 175, 55, 0.08),
+    transparent
+  );
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.panel-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#kingdomDescription {
+  margin: 10px;
+  line-height: 25px;
+}
+
+.panel-header {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.panel-header h2 {
+  margin-top: 20px;
+  font-size: 2.5rem;
+  color: #fff;
+  font-family: "Cinzel", serif;
+}
+
+.kingdom-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.stat-card {
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.4s;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: 0 0 25px rgba(85, 72, 30, 0.25);
+}
+
+.stat-card span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+.stat-card h4 {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* ----------- Kingdom CTA ----------- */
+.kingdom-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 140px 20px;
+  text-align: center;
+  background:
+    linear-gradient(rgba(5, 5, 10, 0.88), rgba(5, 5, 10, 0.92)),
+    url("../../assets/overviews/9.jpg") center/cover no-repeat;
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 175, 55, 0.15),
+    transparent 70%
+  );
+  animation: pulseGlow 6s infinite;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.4;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.2);
+  }
+}
+
+.cta-content {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  z-index: 2;
+}
+
+.cta-tag {
+  display: inline-block;
+  padding: 8px 22px;
+  border: 1px solid rgba(84, 73, 39, 0.5);
+  border-radius: 40px;
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.kingdom-cta h2 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.kingdom-cta p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 45px;
+}
+
+.cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 36px;
+  border-radius: 60px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.4s;
+}
+
+.primary-btn {
+  background: var(--gold);
+  color: #111;
+  box-shadow: 0 0 30px rgba(81, 67, 23, 0.35);
+}
+
+.primary-btn:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 45px rgba(91, 77, 29, 0.65);
+}
+
+.secondary-btn {
+  border: 2px solid var(--gold);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.secondary-btn:hover {
+  background: var(--gold);
+  color: #111;
+  transform: translateY(-8px);
+}
+
+.cta-btn i {
+  font-size: 1rem;
+  transition: 0.35s;
+}
+
+.cta-btn:hover i {
+  transform: translateX(5px);
+}
+
+/* ------------------ Responsive --------------- */
+/* ---------- 1024px Screens ---------- */
+@media (max-width: 1024px) {
+  .kingdoms-main {
+    padding: 100px 4% 2rem;
+    min-height: 90vh;
+  }
+
+  .main-title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+  }
+
+  .main-description {
+    font-size: 1rem;
+    margin-bottom: 35px;
+  }
+
+  .main-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .stat-card {
+    padding: 22px;
+  }
+
+  .stat-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .kingdoms-section {
+    padding: 100px 5%;
+  }
+
+  .kingdoms-grid {
+    gap: 30px;
+  }
+
+  .kingdom-card {
+    border-radius: 20px;
+  }
+
+  .kingdom-image {
+    height: 240px;
+  }
+
+  .kingdom-content {
+    padding: 25px;
+  }
+
+  .kingdom-content h3 {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+  }
+
+  .kingdom-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .kingdom-stats div {
+    padding: 12px;
+  }
+
+  .kingdom-stats span {
+    font-size: 0.7rem;
+  }
+
+  .kingdom-map-section {
+    padding: 100px 5%;
+  }
+
+  .kingdom-map {
+    height: 600px;
+    margin: 60px auto;
+  }
+
+  .map-node {
+    width: 160px;
+  }
+
+  .node-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 1.8rem;
+  }
+
+  .node-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .node-info p {
+    font-size: 0.9rem;
+  }
+
+  .kingdom-details-panel {
+    padding: 35px;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .panel-left {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .panel-right {
+    width: 100%;
+  }
+
+  .panel-right h2 {
+    font-size: 2rem;
+  }
+
+  .kingdom-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .kingdom-cta {
+    padding: 100px 15px;
+  }
+
+  .kingdom-cta h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 20px;
+  }
+
+  .kingdom-cta p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    gap: 15px;
+  }
+
+  .cta-btn {
+    padding: 15px 28px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------- 768px Screens ---------- */
+@media (max-width: 768px) {
+  .kingdoms-main {
+    padding: 90px 5% 2rem;
+    min-height: 85vh;
+  }
+
+  .main-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+
+  .main-description {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  .main-buttons {
+    gap: 15px;
+    margin-bottom: 50px;
+  }
+
+  .main-btn {
+    padding: 14px 30px;
+    font-size: 0.9rem;
+  }
+
+  .main-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .stat-card {
+    padding: 18px;
+  }
+
+  .stat-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .stat-card span {
+    font-size: 0.8rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .section-header span {
+    display: block;
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .kingdoms-section {
+    padding: 80px 5%;
+  }
+
+  .kingdoms-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .kingdom-card {
+    display: flex;
+    border-radius: 18px;
+  }
+
+  .kingdom-image {
+    height: 200px;
+    width: 45%;
+    flex-shrink: 0;
+  }
+
+  .kingdom-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .kingdom-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .kingdom-content p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .kingdom-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .kingdom-stats div {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .kingdom-stats span {
+    font-size: 0.65rem;
+    margin-bottom: 5px;
+  }
+
+  .kingdom-stats strong {
+    font-size: 0.85rem;
+  }
+
+  .kingdom-map-section {
+    padding: 80px 5%;
+  }
+
+  .kingdom-map {
+    height: 500px;
+    margin: 50px auto;
+    border-radius: 20px;
+  }
+
+  .map-node {
+    width: 140px;
+  }
+
+  .node-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5rem;
+  }
+
+  .node-info h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .node-info p {
+    font-size: 0.8rem;
+  }
+
+  .clover {
+    bottom: 20px;
+  }
+
+  .spade {
+    top: 20px;
+  }
+
+  .heart {
+    left: 40px;
+    top: 200px;
+  }
+
+  .diamond {
+    right: 40px;
+    top: 200px;
+  }
+
+  .line-1,
+  .line-2 {
+    width: 130px;
+    top: 90px;
+  }
+
+  .line-3,
+  .line-4 {
+    width: 130px;
+    top: 300px;
+  }
+
+  .line-3 {
+    left: 180px;
+  }
+
+  .line-4 {
+    right: 180px;
+  }
+
+  .kingdom-details-panel {
+    padding: 30px;
+    margin-top: 50px;
+    flex-direction: column-reverse;
+  }
+
+  .panel-left {
+    width: 100%;
+    max-width: 250px;
+    height: 200px;
+  }
+
+  .panel-right h2 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  .panel-right p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .kingdom-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 15px;
+  }
+
+  .kingdom-cta {
+    padding: 80px 15px;
+  }
+
+  .cta-tag {
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+
+  .kingdom-cta h2 {
+    font-size: clamp(1.7rem, 4vw, 3rem);
+    margin-bottom: 15px;
+  }
+
+  .kingdom-cta p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------- 425px Screens ---------- */
+@media (max-width: 425px) {
+  .kingdoms-main {
+    padding: 80px 4% 1.5rem;
+    min-height: 80vh;
+  }
+
+  .main-title {
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    margin-bottom: 20px;
+  }
+
+  .main-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .main-buttons {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .main-btn {
+    padding: 12px 24px;
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 15px;
+  }
+
+  .stat-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .stat-card span {
+    font-size: 0.75rem;
+  }
+
+  .scroll-indicator {
+    font-size: 1.2rem;
+    bottom: 20px;
+  }
+
+  .section-header span {
+    font-size: 0.8rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .section-header p {
+    font-size: 0.9rem;
+  }
+
+  .kingdoms-section {
+    padding: 60px 4%;
+  }
+
+  .kingdoms-grid {
+    gap: 20px;
+  }
+
+  .kingdom-card {
+    flex-direction: column;
+  }
+
+  .kingdom-image {
+    width: 100%;
+    height: 180px;
+  }
+
+  .kingdom-content {
+    padding: 18px;
+  }
+
+  .kingdom-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .kingdom-content p {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .kingdom-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .kingdom-stats div {
+    padding: 8px;
+  }
+
+  .kingdom-stats span {
+    font-size: 0.6rem;
+    margin-bottom: 4px;
+  }
+
+  .kingdom-stats strong {
+    font-size: 0.8rem;
+  }
+
+  .kingdom-btn {
+    font-size: 0.85rem;
+  }
+
+  .kingdom-map-section {
+    padding: 60px 4%;
+  }
+
+  .kingdom-map {
+    height: 420px;
+    margin: 40px auto;
+  }
+
+  .map-node {
+    width: 120px;
+  }
+
+  .node-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.3rem;
+  }
+
+  .node-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .node-info p {
+    font-size: 0.75rem;
+  }
+
+  .clover {
+    bottom: 15px;
+  }
+
+  .spade {
+    top: 15px;
+  }
+
+  .heart {
+    left: 25px;
+    top: 160px;
+  }
+
+  .diamond {
+    right: 25px;
+    top: 160px;
+  }
+
+  .line-1,
+  .line-2 {
+    width: 100px;
+    top: 70px;
+  }
+
+  .line-3,
+  .line-4 {
+    width: 100px;
+    top: 260px;
+  }
+
+  .line-3 {
+    left: 130px;
+  }
+
+  .line-4 {
+    right: 130px;
+  }
+
+  .kingdom-details-panel {
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  .panel-left {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 20px;
+  }
+
+  .panel-right h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+
+  .panel-right p {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+
+  .kingdom-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 12px;
+  }
+
+  .stat-card span {
+    font-size: 0.75rem;
+    margin-bottom: 5px;
+  }
+
+  .stat-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .kingdom-cta {
+    padding: 60px 12px;
+  }
+
+  .cta-tag {
+    padding: 5px 14px;
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+  }
+
+  .kingdom-cta h2 {
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .kingdom-cta p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .cta-buttons {
+    margin-top: 20px;
+  }
+
+  .cta-btn {
+    padding: 12px 20px;
+    font-size: 0.85rem;
+  }
+
+  .cta-btn i {
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------- 375px Screens ---------- */
+@media (max-width: 375px) {
+  .kingdoms-main {
+    padding: 75px 3% 1rem;
+    min-height: 75vh;
+  }
+
+  .main-title {
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    margin-bottom: 15px;
+  }
+
+  .main-description {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .main-buttons {
+    margin-bottom: 30px;
+  }
+
+  .main-btn {
+    padding: 11px 20px;
+    font-size: 0.8rem;
+  }
+
+  .main-stats {
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 12px;
+  }
+
+  .stat-card h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .stat-card span {
+    font-size: 0.7rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-header p {
+    font-size: 0.85rem;
+  }
+
+  .kingdoms-section {
+    padding: 50px 3%;
+  }
+
+  .kingdom-card {
+    border-radius: 14px;
+  }
+
+  .kingdom-image {
+    height: 160px;
+  }
+
+  .kingdom-content {
+    padding: 15px;
+  }
+
+  .kingdom-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .kingdom-content p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .kingdom-stats {
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .kingdom-stats div {
+    padding: 7px;
+  }
+
+  .kingdom-stats span {
+    font-size: 0.55rem;
+  }
+
+  .kingdom-stats strong {
+    font-size: 0.75rem;
+  }
+
+  .kingdom-badge {
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .kingdom-map-section {
+    padding: 50px 3%;
+  }
+
+  .kingdom-map {
+    height: 380px;
+    margin: 35px auto;
+  }
+
+  .map-node {
+    width: 110px;
+  }
+
+  .node-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.2rem;
+  }
+
+  .node-info h3 {
+    font-size: 0.85rem;
+  }
+
+  .node-info p {
+    font-size: 0.7rem;
+  }
+
+  .heart {
+    left: 15px;
+  }
+
+  .diamond {
+    right: 15px;
+  }
+
+  .line-1,
+  .line-2 {
+    width: 80px;
+  }
+
+  .line-3,
+  .line-4 {
+    width: 80px;
+  }
+
+  .line-3 {
+    left: 105px;
+  }
+
+  .line-4 {
+    right: 105px;
+  }
+
+  .kingdom-details-panel {
+    padding: 18px;
+    margin-top: 35px;
+  }
+
+  .panel-left {
+    height: 160px;
+    margin-bottom: 15px;
+  }
+
+  .panel-right h2 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .panel-right p {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+
+  .stat-card {
+    padding: 10px;
+  }
+
+  .stat-card span {
+    font-size: 0.7rem;
+  }
+
+  .stat-card h4 {
+    font-size: 0.9rem;
+  }
+
+  .kingdom-cta {
+    padding: 50px 10px;
+  }
+
+  .cta-tag {
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    margin-bottom: 12px;
+  }
+
+  .kingdom-cta h2 {
+    font-size: clamp(1.2rem, 2.8vw, 1.8rem);
+    margin-bottom: 10px;
+  }
+
+  .kingdom-cta p {
+    font-size: 0.85rem;
+  }
+
+  .cta-buttons {
+    margin-top: 15px;
+    gap: 8px;
+  }
+
+  .cta-btn {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ---------- 320px Screens ---------- */
+@media (max-width: 320px) {
+  .nav-container {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .logo img {
+    width: 90px;
+    height: 45px;
+  }
+
+  .nav-links {
+    gap: 0;
+  }
+
+  .mobile-toggle {
+    width: 26px;
+    height: 26px;
+    font-size: 1.1rem;
+  }
+
+  .kingdoms-main {
+    padding: 70px 2.5% 1rem;
+    min-height: 70vh;
+  }
+
+  .main-title {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+
+  .main-description {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .main-buttons {
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+
+  .main-btn {
+    padding: 10px 16px;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+
+  .main-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 10px;
+  }
+
+  .stat-card h3 {
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+  }
+
+  .stat-card span {
+    font-size: 0.65rem;
+  }
+
+  .scroll-indicator {
+    font-size: 1rem;
+    bottom: 15px;
+  }
+
+  .section-header {
+    margin-bottom: 20px;
+  }
+
+  .section-header span {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+  }
+
+  .section-header h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+
+  .section-header p {
+    font-size: 0.8rem;
+  }
+
+  .kingdoms-section {
+    padding: 45px 2.5%;
+  }
+
+  .kingdoms-grid {
+    gap: 15px;
+    margin-top: 50px;
+  }
+
+  .kingdom-card {
+    border-radius: 12px;
+  }
+
+  .kingdom-image {
+    height: 140px;
+  }
+
+  .kingdom-content {
+    padding: 12px;
+  }
+
+  .kingdom-content h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .kingdom-content p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .kingdom-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .kingdom-stats div {
+    padding: 6px;
+    border-radius: 8px;
+  }
+
+  .kingdom-stats span {
+    font-size: 0.5rem;
+    margin-bottom: 2px;
+  }
+
+  .kingdom-stats strong {
+    font-size: 0.7rem;
+  }
+
+  .kingdom-badge {
+    padding: 5px 10px;
+    font-size: 0.65rem;
+    bottom: 12px;
+    left: 10px;
+  }
+
+  .kingdom-btn {
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+
+  .kingdom-btn i {
+    font-size: 0.9rem;
+  }
+
+  .kingdom-map-section {
+    padding: 45px 2.5%;
+  }
+
+  .kingdom-map {
+    height: 340px;
+    margin: 30px auto;
+    border-radius: 15px;
+  }
+
+  .map-node {
+    width: 100px;
+  }
+
+  .node-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+  }
+
+  .node-info h3 {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+  }
+
+  .node-info p {
+    font-size: 0.65rem;
+  }
+
+  .clover {
+    bottom: 10px;
+  }
+
+  .spade {
+    top: 10px;
+  }
+
+  .heart {
+    left: 8px;
+    top: 140px;
+  }
+
+  .diamond {
+    right: 8px;
+    top: 140px;
+  }
+
+  .line-1,
+  .line-2 {
+    width: 70px;
+    top: 50px;
+  }
+
+  .line-3,
+  .line-4 {
+    width: 70px;
+    top: 230px;
+  }
+
+  .line-3 {
+    left: 90px;
+  }
+
+  .line-4 {
+    right: 90px;
+  }
+
+  .kingdom-details-panel {
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 15px;
+  }
+
+  .panel-left {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 12px;
+  }
+
+  .panel-right h2 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+  }
+
+  .panel-right p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .kingdom-stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .stat-card span {
+    font-size: 0.65rem;
+    margin-bottom: 3px;
+  }
+
+  .stat-card h4 {
+    font-size: 0.85rem;
+  }
+
+  .kingdom-cta {
+    padding: 45px 8px;
+  }
+
+  .cta-tag {
+    padding: 3px 10px;
+    font-size: 0.65rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .kingdom-cta h2 {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    line-height: 1.2;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .kingdom-cta p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .cta-buttons {
+    margin-top: 12px;
+    gap: 6px;
+  }
+
+  .cta-btn {
+    padding: 9px 14px;
+    font-size: 0.75rem;
+    border-radius: 40px;
+  }
+
+  .cta-btn i {
+    font-size: 0.8rem;
+  }
+}

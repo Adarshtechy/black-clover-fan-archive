@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./kingdoms.css" />
+    <title>Kingdoms</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="../home/home.html" class="logo">
+                <img src="../../assets/logos/logo.png" alt="Black Clover Logo">
+            </a>
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                type="button">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- Nav Links -->
+            <ul class="nav-links">
+                <li><a href="../home/home.html">Home</a></li>
+                <li><a href="../story/story.html">Story</a></li>
+                <li><a href="../characters/characters.html">Characters</a></li>
+                <li><a href="../magic/magic.html">Magic</a></li>
+                <li><a href="../gallery/gallery.html">Gallery</a></li>
+                <!-- Dropdown-->
+                <li class="dropdown">
+                    <a href="#" class="more">
+                        More
+                        <i class="fa-solid fa-angle-down down-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../about/about.html">About</a></li>
+                        <li><a href="./kingdoms.html" class="active">Kingdoms</a></li>
+                        <li><a href="../media/media.html">Media</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Kingdoms Main -->
+    <section class="kingdoms-main">
+        <div class="main-overlay"></div>
+        <div class="main-content">
+            <h1 class="main-title">
+                The Four Great Kingdoms
+            </h1>
+            <p class="main-description">
+                Journey through the Clover, Heart, Diamond, and Spade Kingdoms—
+                nations shaped by powerful rulers, legendary Magic Knights,
+                ancient grimoires, and unforgettable battles.
+            </p>
+            <div class="main-buttons">
+                <a href="#kingdoms" class="main-btn primary-btn">
+                    Explore Kingdoms
+                </a>
+                <a href="#squads" class="main-btn secondary-btn">
+                    Magic Knight Squads
+                </a>
+            </div>
+            <div class="main-stats">
+                <div class="stat-card">
+                    <h3>4</h3>
+                    <span>Kingdoms</span>
+                </div>
+                <div class="stat-card">
+                    <h3>9</h3>
+                    <span>Magic Squads</span>
+                </div>
+                <div class="stat-card">
+                    <h3>100+</h3>
+                    <span>Mages</span>
+                </div>
+                <div class="stat-card">
+                    <h3>500+</h3>
+                    <span>Years of History</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+    </section>
+
+    <!-- Kingdoms Section -->
+    <section class="kingdoms-section">
+        <div class="section-header">
+            <span>Four Great Nations</span>
+            <h2>The Four Kingdoms</h2>
+            <p>
+                Every kingdom possesses its own culture, military strength,
+                magical traditions, and legendary warriors.
+            </p>
+        </div>
+
+        <div class="kingdoms-grid">
+            <!-- Clover -->
+            <article class="kingdom-card">
+                <div class="kingdom-image">
+                    <img src="../../assets/kingdoms/1.jpg" alt="Clover Kingdom">
+                    <span class="kingdom-badge">
+                        ♣ Clover
+                    </span>
+                </div>
+                <div class="kingdom-content">
+                    <h3>Clover Kingdom</h3>
+                    <p>
+                        The strongest kingdom, protected by the Magic Knights
+                        and led by the Wizard King. Home of Asta, Yuno,
+                        Noelle and the Black Bulls.
+                    </p>
+                    <div class="kingdom-stats">
+                        <div>
+                            <span>Capital</span>
+                            <strong>Royal Capital</strong>
+                        </div>
+                        <div>
+                            <span>Leader</span>
+                            <strong>King Augustus</strong>
+                        </div>
+                        <div>
+                            <span>Strength</span>
+                            <strong>★★★★★</strong>
+                        </div>
+                    </div>
+                    <a href="#" class="kingdom-btn">
+                        Explore Kingdom
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Heart -->
+            <article class="kingdom-card">
+                <div class="kingdom-image">
+                    <img src="../../assets/kingdoms/2.jpg" alt="Heart Kingdom">
+                    <span class="kingdom-badge">
+                        ♥ Heart
+                    </span>
+                </div>
+                <div class="kingdom-content">
+                    <h3>Heart Kingdom</h3>
+                    <p>
+                        Blessed with abundant natural mana and ruled by
+                        Queen Lolopechka alongside the Water Spirit Undine.
+                    </p>
+                    <div class="kingdom-stats">
+                        <div>
+                            <span>Leader</span>
+                            <strong>Lolopechka</strong>
+                        </div>
+                        <div>
+                            <span>Magic</span>
+                            <strong>Natural Mana</strong>
+                        </div>
+                        <div>
+                            <span>Spirit</span>
+                            <strong>Undine</strong>
+                        </div>
+                    </div>
+                    <a href="#" class="kingdom-btn">
+                        Explore Kingdom
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Spade -->
+            <article class="kingdom-card">
+                <div class="kingdom-image">
+                    <img src="../../assets/kingdoms/3.jpg" alt="Spade Kingdom">
+                    <span class="kingdom-badge">
+                        ♠ Spade
+                    </span>
+                </div>
+                <div class="kingdom-content">
+                    <h3>Spade Kingdom</h3>
+                    <p>
+                        Once ruled by the Dark Triad,
+                        becoming the birthplace of Devils
+                        and forbidden magic.
+                    </p>
+                    <div class="kingdom-stats">
+                        <div>
+                            <span>Rulers</span>
+                            <strong>Dark Triad</strong>
+                        </div>
+                        <div>
+                            <span>Power</span>
+                            <strong>Devils</strong>
+                        </div>
+                        <div>
+                            <span>Threat</span>
+                            <strong>★★★★★</strong>
+                        </div>
+                    </div>
+                    <a href="#" class="kingdom-btn">
+                        Explore Kingdom
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Diamond -->
+            <article class="kingdom-card">
+                <div class="kingdom-image">
+                    <img src="../../assets/kingdoms/4.jpg" alt="Diamond Kingdom">
+                    <span class="kingdom-badge">
+                        ♦ Diamond
+                    </span>
+
+                </div>
+
+                <div class="kingdom-content">
+
+                    <h3>Diamond Kingdom</h3>
+
+                    <p>
+                        A military nation famous for
+                        magical experimentation and
+                        powerful Mage Warriors.
+                    </p>
+                    <div class="kingdom-stats">
+                        <div>
+                            <span>Army</span>
+                            <strong>Mage Warriors</strong>
+                        </div>
+                        <div>
+                            <span>Focus</span>
+                            <strong>Science</strong>
+                        </div>
+                        <div>
+                            <span>Military</span>
+                            <strong>★★★★☆</strong>
+                        </div>
+                    </div>
+                    <a href="#" class="kingdom-btn">
+                        Explore Kingdom
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Kingdom map Section -->
+    <section class="kingdom-map-section">
+        <div class="section-header">
+            <span>Explore the Continent</span>
+            <h2>The Four Great Kingdoms</h2>
+            <p>
+                Journey across the continent and discover the nations that shaped
+                the history of the Black Clover universe.
+            </p>
+        </div>
+
+        <div class="kingdom-map">
+            <!-- Connecting Lines -->
+            <div class="map-lines">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+                <span class="line line-4"></span>
+            </div>
+
+            <!-- Spade -->
+            <div class="map-node spade">
+                <div class="node-icon">
+                    <i class="fa-solid fa-snowflake"></i>
+                </div>
+                <div class="node-info">
+                    <h3>Spade Kingdom</h3>
+                    <p>Land of Devils</p>
+                </div>
+            </div>
+
+            <!-- Heart -->
+            <div class="map-node heart">
+                <div class="node-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="node-info">
+                    <h3>Heart Kingdom</h3>
+                    <p>Natural Mana</p>
+                </div>
+            </div>
+
+            <!-- Clover -->
+            <div class="map-node clover">
+                <div class="node-icon">
+                    <i class="fa-solid fa-clover"></i>
+                </div>
+                <div class="node-info">
+                    <h3>Clover Kingdom</h3>
+                    <p>Magic Knights</p>
+                </div>
+            </div>
+
+            <!-- Diamond -->
+            <div class="map-node diamond">
+                <div class="node-icon">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <div class="node-info">
+                    <h3>Diamond Kingdom</h3>
+                    <p>Military Nation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-details-panel">
+            <div class="panel-left">
+                <div class="kingdom-emblem">
+                    <img id="kingdomEmblem" src="../../assets/kingdoms/5.jpg" alt="Kingdom Emblem">
+                </div>
+            </div>
+            <div class="panel-right">
+                <h2 id="kingdomName">
+                    Clover Kingdom
+                </h2>
+                <p id="kingdomDescription">
+                    The largest kingdom protected by the Magic Knights.
+                </p>
+                <div class="kingdom-stats">
+                    <div class="stat-card">
+                        <span>Population</span>
+                        <h4 id="population">18 Million</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Capital</span>
+                        <h4 id="capital">Royal Capital</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Leader</span>
+                        <h4 id="leader">
+                            King Augustus Kira Clover XIII
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Military</span>
+                        <h4 id="military">
+                            Magic Knights
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Mana Level</span>
+                        <h4 id="mana">
+                            ★★★★★
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Special Magic</span>
+                        <h4 id="magic">
+                            Anti Magic • Light • Time • Spatial
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Climate</span>
+                        <h4 id="climate">
+                            Temperate
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Status</span>
+                        <h4 id="status">
+                            Strongest Kingdom
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-details-panel">
+            <div class="panel-left">
+                <div class="kingdom-emblem">
+                    <img id="kingdomEmblem" src="../../assets/kingdoms/6.jpg" alt="Kingdom Emblem">
+                </div>
+            </div>
+            <div class="panel-right">
+                <h2 id="kingdomName">
+                    Heart Kingdom
+                </h2>
+                <p id="kingdomDescription">
+                    A peaceful nation blessed with abundant natural mana.
+                </p>
+                <div class="kingdom-stats">
+                    <div class="stat-card">
+                        <span>Population</span>
+                        <h4 id="population">9 Million</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Capital</span>
+                        <h4 id="capital">Heart Palace</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Leader</span>
+                        <h4 id="leader">
+                            Princess Lolopechka
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Military</span>
+                        <h4 id="military">
+                            Spirit Guardians
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Mana Level</span>
+                        <h4 id="mana">
+                            ★★★★★
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Special Magic</span>
+                        <h4 id="magic">
+                            Nature • Water • Spirit Magic
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Climate</span>
+                        <h4 id="climate">
+                            Tropical
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Status</span>
+                        <h4 id="status">
+                            Mana Rich
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-details-panel">
+            <div class="panel-left">
+                <div class="kingdom-emblem">
+                    <img id="kingdomEmblem" src="../../assets/kingdoms/7.jpg" alt="Kingdom Emblem">
+                </div>
+            </div>
+            <div class="panel-right">
+                <h2 id="kingdomName">
+                    Diamond Kingdom
+                </h2>
+                <p id="kingdomDescription">
+                    A military nation using magical research and enhancement.
+                </p>
+                <div class="kingdom-stats">
+                    <div class="stat-card">
+                        <span>Population</span>
+                        <h4 id="population">12 Million</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Capital</span>
+                        <h4 id="capital">Diamond Fortress</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Leader</span>
+                        <h4 id="leader">
+                            Mortis
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Military</span>
+                        <h4 id="military">
+                            Shining Generals
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Mana Level</span>
+                        <h4 id="mana">
+                            ★★★★☆
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Special Magic</span>
+                        <h4 id="magic">
+                            Mineral • Earth • Enhancement Magic
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Climate</span>
+                        <h4 id="climate">
+                            Dry
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Status</span>
+                        <h4 id="status">
+                            Military State
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-details-panel">
+            <div class="panel-left">
+                <div class="kingdom-emblem">
+                    <img id="kingdomEmblem" src="../../assets/kingdoms/8.jpg" alt="Kingdom Emblem">
+                </div>
+            </div>
+            <div class="panel-right">
+                <h2 id="kingdomName">
+                    Spade Kingdom
+                </h2>
+                <p id="kingdomDescription">
+                    The northern kingdom once ruled by the Dark Triad.
+                </p>
+                <div class="kingdom-stats">
+                    <div class="stat-card">
+                        <span>Population</span>
+                        <h4 id="population">10 Million</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Capital</span>
+                        <h4 id="capital">Spade Castle</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Leader</span>
+                        <h4 id="leader">
+                            Lucius Zogratis
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Military</span>
+                        <h4 id="military">
+                            dark Triad
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Mana Level</span>
+                        <h4 id="mana">
+                            ★★★★★
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Special Magic</span>
+                        <h4 id="magic">
+                            Devil Magic • Dark Magic
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Climate</span>
+                        <h4 id="climate">
+                            Frozen
+                        </h4>
+                    </div>
+                    <div class="stat-card">
+                        <span>Status</span>
+                        <h4 id="status">
+                            Devi Territory
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kingdom CTA -->
+    <section class="kingdom-cta">
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+            <span class="cta-tag">
+                Continue Your Adventure
+            </span>
+            <h2>
+                Every Kingdom Has Its Heroes.
+                <br>
+                Discover Their Stories.
+            </h2>
+            <p>
+                Explore the legendary Magic Knights, powerful captains, unique magic
+                attributes, and unforgettable battles that shaped the world of
+                Black Clover.
+            </p>
+            <div class="cta-buttons">
+                <a href="../characters/characters.html" class="cta-btn primary-btn">
+                    <i class="fa-solid fa-users"></i>
+                    Explore Characters
+                </a>
+                <a href="../magic/magic.html" class="cta-btn secondary-btn">
+                    <i class="fa-solid fa-book-open"></i>
+                    Magic System
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="../../assets/logos/logo.png" alt="Black Clover Logo">
+                <p class="footer-description">
+                    Explore the world of Magic Knights, Grimoires, Kingdoms,
+                    and the legends who shaped the fate of the Clover Kingdom.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <a href="../home/home.html">Home</a>
+                    <a href="../about/about.html">About</a>
+                    <a href="../story/story.html">Story</a>
+                    <a href="../characters/characters.html">Characters</a>
+                    <a href="../gallery/gallery.html">Gallery</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <a href="../magic/magic.html">Magic</a>
+                    <a href="./kingdoms.html">Kingdoms</a>
+                    <a href="../media/media.html">Media</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-quote">
+            <span></span>
+            <p>
+                "Protecting people is what makes you a Magic Knight."
+            </p>
+            <span></span>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 Black Clover Fan Website. Crafted with passion.
+            </p>
+        </div>
+    </footer>
+
+    <script src="../common.js"></script>
+</body>
+
+</html>

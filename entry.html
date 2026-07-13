@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            min-height: 100vh;
+            background-image: url("./assets/main-bg/0.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.2) 35%, rgba(0, 0, 0, 0.7));
+            pointer-events: none;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            min-height: 76px;
+            padding: 16px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.58), transparent);
+        }
+
+        img {
+            width: 200px;
+            height: 100px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            animation: logoEntry 0.8s ease 0.12s both;
+            transition: transform 0.28s ease, opacity 0.28s ease;
+        }
+
+
+        .logo:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
+        }
+
+        .logo:hover::after {
+            transform: scaleX(1);
+        }
+
+        @keyframes logoEntry {
+            from {
+                opacity: 0;
+                transform: translateX(-18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+
+        }
+
+        .title {
+            font-family: 'Cinzel', serif;
+            font-size: 50px;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            background: #f1e8d9;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            animation: zoomInEntry 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .subtitle-1,
+        .subtitle-2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            animation: zoomInEntry 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .subtitle-1 {
+            color: #b99a61;
+        }
+
+        .subtitle-2 {
+            color: #b8aa96;
+        }
+
+        @keyframes zoomInEntry {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+
+            }
+        }
+
+        .book-float {
+            position: relative;
+            z-index: 2;
+            animation: bookFloat 5.8s ease-in-out infinite;
+        }
+
+        @keyframes bookFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .book {
+            position: relative;
+            width: 174px;
+            height: 236px;
+            border: 1px solid rgba(185, 154, 97, 0.38);
+            border-radius: 9px 18px 18px 9px;
+            background:
+                linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent 11%),
+                linear-gradient(135deg, rgba(185, 154, 97, 0.17), transparent 18% 78%, rgba(185, 154, 97, 0.08)),
+                repeating-linear-gradient(24deg, rgba(255, 255, 255, 0.022) 0 1px, transparent 1px 7px),
+                radial-gradient(circle at 52% 42%, rgba(75, 32, 25, 0.42), transparent 45%),
+                linear-gradient(135deg, var(--leather), var(--leather-deep) 48%, #22100d);
+            box-shadow:
+                0 22px 44px rgba(0, 0, 0, 0.72),
+                0 0 42px rgba(141, 13, 34, 0.22),
+                inset 10px 0 18px rgba(255, 238, 198, 0.07),
+                inset -14px 0 24px rgba(0, 0, 0, 0.82);
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transform-origin: left center;
+            transition: transform 1.25s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 1.25s ease, filter 1.25s ease;
+        }
+
+        .book::before {
+            content: "";
+            position: absolute;
+            inset: 14px;
+            border: 1px solid rgba(185, 154, 97, 0.42);
+            border-radius: 7px 13px 13px 7px;
+            background:
+                linear-gradient(90deg, transparent 0 9%, rgba(185, 154, 97, 0.16) 10%, transparent 11%),
+                linear-gradient(135deg, transparent 46%, rgba(185, 154, 97, 0.14) 47% 48%, transparent 49%),
+                linear-gradient(45deg, transparent 46%, rgba(185, 154, 97, 0.1) 47% 48%, transparent 49%);
+        }
+
+        .book::after {
+            content: "\2663";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5.35rem;
+            color: #6f0919;
+            text-shadow: 0 0 18px rgba(141, 13, 34, 0.42);
+        }
+
+        .book-edge {
+            position: absolute;
+            top: 12px;
+            right: -8px;
+            bottom: 12px;
+            width: 12px;
+            border-radius: 0 12px 12px 0;
+            background:
+                repeating-linear-gradient(to bottom, rgba(238, 220, 178, 0.62) 0 2px, rgba(80, 60, 42, 0.5) 2px 4px);
+            box-shadow: inset -4px 0 8px rgba(0, 0, 0, 0.45);
+        }
+
+        .book:hover,
+        .book:focus-visible {
+            transform: translateY(-2px) rotateX(3deg);
+            box-shadow:
+                0 24px 48px rgba(0, 0, 0, 0.76),
+                0 0 52px rgba(141, 13, 34, 0.32),
+                inset 10px 0 18px rgba(255, 238, 198, 0.08),
+                inset -14px 0 24px rgba(0, 0, 0, 0.82);
+            outline: none;
+        }
+
+        .hint {
+            margin-top: 30px;
+            border: 1px solid rgba(185, 154, 97, 0.42);
+            border-radius: 999px;
+            padding: 0.82rem 1.65rem;
+            background: rgba(6, 5, 5, 0.36);
+            color: #e7d8bd;
+            font-family: "Cinzel", Georgia, serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.26);
+            cursor: pointer;
+            transition: border-color 0.45s ease, box-shadow 0.45s ease, color 0.45s ease, transform 0.45s ease;
+            animation: mainEntry 3s ease forwards;
+        }
+
+        @keyframes mainEntry {
+            from {
+                opacity: 0;
+                transform: translateX(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hint:hover,
+        .hint:focus-visible {
+            color: #f4e6cb;
+            border-color: rgba(185, 154, 97, 0.74);
+            box-shadow: 0 0 28px rgba(141, 13, 34, 0.24), 0 16px 34px rgba(0, 0, 0, 0.32);
+            transform: translateY(-4px);
+            outline: none;
+        }
+
+        /*---------------- Responsive Design --------------- */
+        @media (max-width: 1024px) {
+
+            nav {
+                padding: 14px 5%;
+            }
+
+            img {
+                width: 170px;
+                height: 85px;
+            }
+
+            .title {
+                font-size: 42px;
+                letter-spacing: 4px;
+                margin-bottom: 20px;
+            }
+
+            .subtitle-1,
+            .subtitle-2 {
+                font-size: 1.1rem;
+                letter-spacing: 2px;
+            }
+
+            .book {
+                width: 160px;
+                height: 220px;
+            }
+
+            .book::after {
+                font-size: 4.8rem;
+            }
+
+            .hint {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.74rem;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+
+            nav {
+                min-height: 70px;
+                padding: 12px 5%;
+            }
+
+            img {
+                width: 150px;
+                height: 75px;
+            }
+
+            .main {
+                padding: 20px 18px;
+            }
+
+            .title {
+                font-size: 34px;
+                letter-spacing: 3px;
+                line-height: 1.2;
+                margin-bottom: 18px;
+            }
+
+            .subtitle-1,
+            .subtitle-2 {
+                font-size: 1rem;
+                letter-spacing: 2px;
+                margin-bottom: 16px;
+            }
+
+            .book {
+                width: 145px;
+                height: 200px;
+            }
+
+            .book::after {
+                font-size: 4.2rem;
+            }
+
+            .hint {
+                margin-top: 25px;
+                padding: 0.72rem 1.4rem;
+                font-size: 0.72rem;
+                letter-spacing: 0.12em;
+            }
+        }
+
+        @media (max-width: 425px) {
+
+            body {
+                overflow-x: hidden;
+            }
+
+            nav {
+                justify-content: center;
+                padding: 10px 4%;
+            }
+
+            img {
+                width: 130px;
+                height: 65px;
+            }
+
+            .main {
+                padding: 18px 16px;
+            }
+
+            .title {
+                font-size: 28px;
+                letter-spacing: 2px;
+                line-height: 1.25;
+                margin-bottom: 16px;
+            }
+
+            .subtitle-1,
+            .subtitle-2 {
+                font-size: 0.88rem;
+                letter-spacing: 1.5px;
+                margin-bottom: 14px;
+            }
+
+            .book {
+                width: 125px;
+                height: 175px;
+            }
+
+            .book::after {
+                font-size: 3.5rem;
+            }
+
+            .book-edge {
+                width: 10px;
+            }
+
+            .hint {
+                margin-top: 22px;
+                padding: 0.7rem 1.2rem;
+                font-size: 0.68rem;
+                letter-spacing: 0.1em;
+            }
+        }
+
+        @media (max-width: 375px) {
+
+            .title {
+                font-size: 24px;
+                letter-spacing: 1.5px;
+            }
+
+            .subtitle-1,
+            .subtitle-2 {
+                font-size: 0.8rem;
+            }
+
+            .book {
+                width: 115px;
+                height: 160px;
+            }
+
+            .book::after {
+                font-size: 3rem;
+            }
+
+            .hint {
+                padding: 0.65rem 1rem;
+                font-size: 0.64rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+
+            nav {
+                min-height: 60px;
+            }
+
+            img {
+                width: 110px;
+                height: 55px;
+            }
+
+            .main {
+                padding: 15px 12px;
+            }
+
+            .title {
+                font-size: 20px;
+                line-height: 1.3;
+                letter-spacing: 1px;
+                margin-bottom: 14px;
+            }
+
+            .subtitle-1,
+            .subtitle-2 {
+                font-size: 0.72rem;
+                letter-spacing: 1px;
+                margin-bottom: 12px;
+            }
+
+            .book {
+                width: 100px;
+                height: 145px;
+            }
+
+            .book::after {
+                font-size: 2.6rem;
+            }
+
+            .book-edge {
+                width: 8px;
+            }
+
+            .hint {
+                margin-top: 18px;
+                padding: 0.6rem 0.9rem;
+                font-size: 0.58rem;
+                letter-spacing: 0.08em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" title="logo" class="logo">
+            <img src="./assets/logos/logo.png" alt="Website logo">
+        </a>
+    </nav>
+    <main class="main">
+        <p class="subtitle-1">
+            Welcome to
+        </p>
+        <h1 class="title">
+            The
+            World Of
+            Black Clover
+        </h1>
+        <p class="subtitle-2">
+            Where Magic is Everything
+        </p>
+        <div class="book-float">
+            <button class="book" type="button" aria-label="Open the book">
+                <span class="book-edge" aria-hidden="true"></span>
+            </button>
+        </div>
+        <button class="hint" type="button" id="enter_btn">Enter the World</button>
+    </main>
+
+    <script>
+        const enterBtn = document.getElementById("enter_btn");
+        enterBtn.addEventListener("click", () => {
+            window.location.href = "./pages/home/home.html";
+        });
+    </script>
+</body>
+
+</html>
